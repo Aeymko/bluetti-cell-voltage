@@ -4,6 +4,10 @@ Per-cell battery voltages of BLUETTI power stations, read straight from the brow
 
 **[Open the app →](https://aeymko.github.io/bluetti-cell-voltage/)**
 
+| Light | Dark |
+| --- | --- |
+| ![Dashboard, light theme](docs/screenshot_1.png) | ![Dashboard, dark theme](docs/screenshot_2.png) |
+
 - Live cell voltages, delta, SOC and charging mode
 - Charts of each cell, the delta and SOC over time
 - Saved readings stay in your browser; export to CSV or JSON
