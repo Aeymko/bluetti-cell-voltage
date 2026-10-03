@@ -3,6 +3,7 @@ import type { BluettiSession, DetectedModel, StationProfile } from '@/shared/api
 
 export type ConnectionStatus =
   | 'disconnected'
+  | 'searching'
   | 'connecting'
   | 'waiting'
   | 'handshake'

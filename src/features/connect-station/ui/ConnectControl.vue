@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { Bluetooth, BluetoothOff, Loader2 } from '@lucide/vue'
 import { useStorage } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { connectionStatus, isConnected } from '@/entities/station'
 import { Button } from '@/shared/ui/button'
 import { Label } from '@/shared/ui/label'
 import { Switch } from '@/shared/ui/switch'
-import { connectStation, disconnectStation } from '../model/connect'
+import { connectStation, disconnectStation, reconnectRememberedStation } from '../model/connect'
 
 const showAll = useStorage('bcv-show-all-devices', false)
 
+onMounted(reconnectRememberedStation)
+
 const STEP_LABELS: Record<string, string> = {
+  searching: 'Looking for station…',
   connecting: 'Connecting…',
   waiting: 'Waiting for station…',
   handshake: 'Exchanging keys…',
